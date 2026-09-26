@@ -10,7 +10,7 @@
 <style>
   :root{
     --bg:#faf8f5; --surface:#ffffff; --text:#242220; --muted:#5c574f;
-    --accent:#7a2323; --accent-soft:#f3e6e2; --border:#e7e1d8; --dark:#2e2c29;
+    --accent:#1b3a63; --accent-soft:#e3e8f1; --border:#e7e1d8; --dark:#2e2c29;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -80,7 +80,16 @@
   .pill{display:inline-block; background:var(--accent-soft); color:var(--accent); font-size:.8rem; font-weight:600; padding:5px 12px; border-radius:999px; margin:0 6px 6px 0;}
 
   details{background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:10px 16px; margin-top:10px;}
-  summary{cursor:pointer; font-weight:600; font-size:.9rem; color:var(--accent);}
+  summary{cursor:pointer; font-weight:600; font-size:.9rem; color:var(--accent); list-style:none; display:flex; align-items:center; gap:8px; user-select:none;
+    background:var(--accent-soft); padding:10px 16px; border-radius:10px; border:1px solid var(--border); transition:background .15s ease, box-shadow .15s ease;}
+  summary::-webkit-details-marker{display:none;}
+  summary .hint{margin-left:auto; font-weight:400; font-size:.76rem; color:var(--muted);}
+  summary .hint:before{content:"Click to expand";}
+  details[open] summary .hint:before{content:"Click to collapse";}
+  summary:after{content:"▾"; display:inline-block; font-size:.75rem; transition:transform .2s ease; color:var(--accent);}
+  details[open] summary:after{transform:rotate(180deg);}
+  summary:hover{background:#d3dcec; box-shadow:0 1px 4px rgba(27,58,99,.15);}
+  details{margin:10px 0;}
   details ul{margin-top:10px;}
 
   footer{padding:36px 0 48px; text-align:center; color:var(--muted); font-size:.85rem;}
@@ -120,7 +129,7 @@
   <a class="pill" href="https://www.whatsapp.com/channel/0029Vakf3G3BqbrFc3DrlW0O" target="_blank" rel="noopener" style="text-decoration:none;">Aspiring Teachers ↗</a>
   <a class="pill" href="https://www.whatsapp.com/channel/0029VaWuyB28V0tmvRFbmE0D" target="_blank" rel="noopener" style="text-decoration:none;">MathXplore ↗</a>
   <a class="pill" href="https://theeasyresearcher.github.io/MA-PRISM/" target="_blank" rel="noopener" style="text-decoration:none;">Founder &amp; Admin - MA-PRISM ↗</a>
-  <a class="pill" href="https://sites.google.com/view/schrodingersstudent/home" target="_blank" rel="noopener" style="text-decoration:none;">Founder &amp; Admin - Schrödinger's Rescue ↗</a>
+  <a class="pill" href="https://sites.google.com/view/schrodingersstudent/testimonials" target="_blank" rel="noopener" style="text-decoration:none;">Founder &amp; Admin - Schrödinger's Student ↗</a>
 </div>
 
 <section id="about"><div class="wrap">
@@ -129,15 +138,21 @@
 </div></section>
 
 <section id="experience"><div class="wrap">
-  <h2 class="section-title">Education &amp; Experience</h2>
+  <h2 class="section-title">Education</h2>
   <div class="timeline">
     <div class="titem"><h3>Ph.D. Chemistry</h3><div class="meta">VIT Vellore · 2021 – Present</div><p>Doctoral research on quantum dot-based fluorescence sensors for biologically important analytes.</p></div>
-    <div class="titem"><h3>Marketing, Operations &amp; Business Strategy - Mathseon LLP</h3><div class="meta">Jan – Jun 2026</div><p>Online mathematics coaching platform; planned operations, advertising and content deployment plans, and growth tactics.</p></div>
     <div class="titem"><h3>M.Sc. Analytical Chemistry</h3><div class="meta">St. Aloysius College (Autonomous), Mangaluru · 2019 – 2021</div><p>Review paper on the drug "Flunitrazepam."</p></div>
-    <div class="titem"><h3>Summer Research Trainee - CSIR-SRTP (CSIR-NEIST)</h3><div class="meta">2020</div><p>Biosynthesis of ZnO nanoparticles for dye degradation, under Dr. Gomathi.</p></div>
     <div class="titem"><h3>M.B.A. Marketing Management</h3><div class="meta">Annamalai University (DDE), Chidambaram · 2017 – 2019</div></div>
-    <div class="titem"><h3>Sales, Marketing &amp; Promotions - Joyalukkas Group, Chennai</h3><div class="meta">Jun 2017 – May 2019</div></div>
     <div class="titem"><h3>B.Sc. Chemistry</h3><div class="meta">St. Berchmans College, Kottayam · 2014 – 2017</div><p>Computational and adsorption studies of chitin using azo dyes with varying acceptor strength.</p></div>
+  </div>
+</div></section>
+
+<section id="professional-experience"><div class="wrap">
+  <h2 class="section-title">Professional &amp; Research Experience</h2>
+  <div class="timeline">
+    <div class="titem"><h3>Marketing, Operations &amp; Business Strategy - Mathseon LLP</h3><div class="meta">Jan – Jun 2026</div><p>Online mathematics coaching platform; planned operations, advertising and content deployment plans, and growth tactics.</p></div>
+    <div class="titem"><h3>Summer Research Trainee - CSIR-SRTP (CSIR-NEIST)</h3><div class="meta">2020</div><p>Biosynthesis of ZnO nanoparticles for dye degradation, under Dr. Gomathi.</p></div>
+    <div class="titem"><h3>Sales, Marketing &amp; Promotions - Joyalukkas Group, Chennai</h3><div class="meta">Jun 2017 – May 2019</div></div>
   </div>
 </div></section>
 
@@ -145,7 +160,7 @@
   <h2 class="section-title">Outreach, Leadership &amp; Academic Initiatives</h2>
   <p class="lead">Founder of <a href="https://sites.google.com/view/schrodingersstudent/home" target="_blank" rel="noopener">Schrödinger's Student</a>, a science-education outreach platform that has run 16 workshops for students and early-career researchers in 2025-2026 alone - spanning AI tools, LaTeX, machine learning, and electrochemistry.</p>
   <details>
-    <summary>View all 16 programs conducted (2025–2026)</summary>
+    <summary>View all 16 programs conducted (2025–2026)<span class="hint"></span></summary>
     <ul class="clean">
       <li>Workshop on AI Tools for Researchers <span class="meta">- Jun &amp; Aug 2026</span></li>
       <li>Workshop on Electrochemical Sensing <span class="meta">- Aug 2026</span></li>
@@ -212,7 +227,7 @@
   <h2 class="section-title" style="margin-top:32px;">Conferences, Workshops &amp; Technical Training</h2>
   
   <details>
-    <summary>Conferences Presented (7)</summary>
+    <summary>Conferences Presented (7)<span class="hint"></span></summary>
     <ul class="clean">
       <li>International Conference on Nanoscience and Nanotechnology (ICNAN’25) <span class="meta">- Centre for Nanotechnology Research (CNR), VIT Vellore - 16-19 Dec 2025</span></li>
       <li>National Conference on Fluorescence Materials and Bio-imaging (FLUORESCENCE-2025) <span class="meta">- Sathyabama Institute of Science and Technology, Chennai - 20-22 Jan 2025</span></li>
@@ -224,7 +239,7 @@
     </ul>
   </details>
   <details>
-    <summary>Conferences &amp; Symposia Attended (11)</summary>
+    <summary>Conferences &amp; Symposia Attended (11)<span class="hint"></span></summary>
     <ul class="clean">
       <li>Integrating Sustainability for Enriching Interdisciplinarity (ISEI 2025) Symposium <span class="meta">- JNCASR, RGCB & Indian Photobiology Society Foundation Day, Bangalore - 25–26 Jul 2025</span></li>
       <li>National Symposium on Advances and Innovations in Materials and Characterization Techniques <span class="meta">- Dept. of Physics, SRM IST Ramapuram - 16 Jul 2025</span></li>
@@ -240,7 +255,7 @@
     </ul>
   </details>
   <details>
-    <summary>Workshops &amp; Seminars Attended (12)</summary>
+    <summary>Workshops &amp; Seminars Attended (12)<span class="hint"></span></summary>
     <ul class="clean">
       <li>100 Years of the Schrödinger Equation - 10-day International Webinar Series <span class="meta">- CTCC, St Berchmans College, Changanassery - 21 May–23 Jul 2026</span></li>
       <li>Careers in Chemistry: From Lab to Industry and Beyond <span class="meta">- Dept. of Chemistry, JIIT Noida - 12 Jun 2025</span></li>
@@ -257,7 +272,7 @@
     </ul>
   </details>
   <details>
-    <summary>Technical Training Programs (12)</summary>
+    <summary>Technical Training Programs (12)<span class="hint"></span></summary>
     <ul class="clean">
       <li>Artificial Intelligence, Machine Learning & Data Science <span class="meta">- Vigyandeep Science Foundation (Online Certificate) - 13–14 Jun 2026</span></li>
       <li>National Workshop on Density Functional Theory (3-day) <span class="meta">- Centre for Functional Materials, VIT Vellore - 16–18 Mar 2026</span></li>
